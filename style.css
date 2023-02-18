@@ -47,6 +47,7 @@ nav{
 
 .navigation .nav-pills {
     margin-left: auto;
+    margin-top: 1rem;
     display: flex;
 }
 
@@ -63,22 +64,22 @@ nav{
 .link {
     text-decoration: none;
     padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
 }
 
 .link-primary {
     background-color: var(--primary-color);
     color: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .link-secondary {
-    border-radius: 1rem;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
 }
 
 /* Look into BEM naming convention */
-
 
 /* lists */
 .list-non-bullet {
@@ -87,27 +88,30 @@ nav{
 
 .list-item-inline {
     display: inline;
-    padding: 0rem 0.5rem;
 }
 
 
 /* header */
 .hero {
-    padding: 1rem;
-    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem 1rem 1rem;
 }
 
 .hero .hero-image {
     max-width: 80%;
     width: 550px;
-    display: block;
-    margin: auto
 }
 
 .hero-heading {
-    text-align: center;
-    padding-top: 1rem;
+    padding: 1.5rem 0 1rem 0;
     color: var(--dark-grey);
+}
+
+.hero-paragraph {
+    text-align:left;
 }
 
 .hero-inverted {
@@ -122,26 +126,22 @@ nav{
 
 /* container */
 .container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     padding: 0 1rem;
 }
 
-.container-center {
-    max-width: 100%;
-    margin: auto;
+.container-paragraph {
+    margin: 0.5rem 0;
 }
-
 
 /* section */
 .section {
+    font-family: "Montserrat", sans-serif;
     padding: 2rem;
     border-radius: 1rem;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-}
-
-.section h1 {
-    text-align: center;
 }
 
 .ow {
@@ -152,11 +152,14 @@ nav{
 /* footer */
 .footer {
     background-color: var(--primary-color);
-    padding: 2rem;
-    text-align: center;
     color: white;
     border-top-right-radius: 1rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer .footer-header {
@@ -164,30 +167,40 @@ nav{
     font-size: large;
 }
 
+.footer ul {
+    margin-top: 0.5rem;
+}
+
+.footer ul li {
+    margin: -0.7rem;
+}
 .footer .link {
     color: white;
 }
 
-.footer ul {
-    padding-inline-start: 0px;
+.copyright {
+    font-size: small;
+    margin-top: 1.5rem;
 }
-
 
 /* media queries */
 @media only screen and (max-width: 550px) {
-    .navigation .nav-brand {
-        font-weight: bold;
-        font-size: medium;
-        margin-right: auto;
+    body {
+        max-width: 100%;
+        width: 100%;
     }
-    
     .navigation .nav-pills {
-        flex-direction: column;
+        /* flex-direction: column; */
         margin-left: auto;
     }
 
     .navigation .nav-pills li {
         margin: 0.2rem;
+    }
+
+    .hero-paragraph {
+        margin: 0 0.2rem;
+        text-align: center;
     }
 
 }
